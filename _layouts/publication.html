@@ -1,9 +1,12 @@
 ---
-layout: post
+layout: default
 ---
-{{ content }}
-
-<p>
-  <strong>Download:</strong>
-  <a href="/images/{{ page.pdf }}">{{ page.title }}</a>
-</p>
+<div id="post">
+  <h1>{{ page.title }}</h1>
+  <p class="meta">{{ page.date | date_to_string }}</p>
+  {{ content }}
+  <p>
+    <strong>Download:</strong>
+    <a href="/images/{{ page.pdf }}">{{ page.title }}</a>
+  </p>
+</div>
