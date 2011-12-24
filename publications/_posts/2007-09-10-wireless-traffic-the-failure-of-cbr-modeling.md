@@ -2,6 +2,11 @@
 layout: publication
 title:  "Wireless Traffic: The Failure of CBR Modeling"
 pdf:    2007,karpinski,wireless traffic - the failure of cbr modeling.pdf
+tags:
+    - networking
+    - traffic modeling
+    - wireless
+    - simulation
 ---
 
 This paper was presented at the [Broadnets conference in Raleigh, North Carolina](http://www.broadnets.org/2007/). The title is an homage to the classic Vern Paxson and Sally Floyd paper “[Wide-Area Traffic: The Failure of Poisson Modeling](http://portal.acm.org/citation.cfm?doid=190809.190338).”

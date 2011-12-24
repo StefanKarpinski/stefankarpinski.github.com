@@ -2,6 +2,11 @@
 layout: publication
 title:  Towards Realistic Models of Wireless Workload
 pdf:    2007,karpinski,towards realistic models of wireless workload.pdf
+tags:
+    - networking
+    - traffic modeling
+    - wireless
+    - simulation
 ---
 
 This paper was presented at the [“WinMee” Wireless Network Measurement Workshop in Limassol, Cyprus](http://www.winmee.org/2007/). It marks the beginning of an ongoing investigation into how we can better represent and model network traffic traces.

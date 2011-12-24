@@ -2,6 +2,12 @@
 layout: publication
 title:  Linear Representation of Network Traffic
 pdf:    2008,karpinski,linear representation of network traffic.pdf
+tags:
+    - networking
+    - traffic modeling
+    - linear algebra
+    - wireless
+    - simulation
 ---
 
 This paper has been published in the [August 2009 issue](http://www.springerlink.com/content/pm6104206m72/) of [Mobile Networks and Applications (MONET)](http://www.springerlink.com/content/101750/). It was originally published online in November of 2008.

@@ -2,6 +2,13 @@
 layout: publication
 title:  Predicting Network Flow Behavior From Five Packets
 pdf:    2009,karpinski,predicting network flow behavior from five packets.pdf
+tags:
+    - networking
+    - traffic modeling
+    - linear algebra
+    - nnmf
+    - wireless
+    - prediction
 ---
 
 This paper won the best paper award at [UCSB’s 2009 Graduate Student Workshop on Computing](http://gswc.cs.ucsb.edu/2009/).
