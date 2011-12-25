@@ -1,6 +1,6 @@
 ---
 title: University of California, Santa Barbara
-dates: 2002-2010
+dates: 2002-present
 where: Santa Barbara, CA
 link:  http://www.cs.ucsb.edu/
 ---
