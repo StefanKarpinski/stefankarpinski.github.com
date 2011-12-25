@@ -32,7 +32,7 @@ body {
 }
 
 h1 {
-  margin-bottom: 1em;
+  padding-bottom: 1em;
 }
 
 p {
@@ -72,6 +72,10 @@ ul.posts {
     line-height: 1.75em;
   }
 
+  #resume ul.posts li {
+    padding-bottom: 1ex;
+  }
+
   ul.posts .timestamp {
     float: right;
     color: #aaa;
@@ -84,8 +88,7 @@ ul.posts {
   ul.posts p {
     font-size: 90%;
     line-height: 1.5em;
-    margin: 0 3ex 0.5ex 3ex;
-    padding-bottom: 0.5ex;
+    margin: 0.5ex 3ex 0.5ex 3ex;
   }
 
 /*****************************************************************************/
