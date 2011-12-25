@@ -59,7 +59,7 @@ table {
 
 /*****************************************************************************/
 /*
-/* Home
+/* Home/Resume
 /*
 /*****************************************************************************/
 
@@ -85,10 +85,14 @@ ul.posts {
     margin-left: 0.5ex;
   }
 
-  ul.posts .content {
+  ul.posts .content, #resume > p {
     font-size: 90%;
     line-height: 1.5em;
     margin: 0ex 3ex 0ex 3ex;
+  }
+
+  #resume > p {
+    padding-bottom: 1em;
   }
 
   ul.posts .content p {
