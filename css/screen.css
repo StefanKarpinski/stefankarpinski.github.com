@@ -74,15 +74,18 @@ ul.posts {
 
   ul.posts .timestamp {
     float: right;
-    width: 12ex;
     color: #aaa;
-    /* font-family: Monaco, "Courier New", monospace;
-    font-size: 80%; */
-    margin-right: 0.5ex;
   }
 
   ul.posts .postlink {
     margin-left: 0.5ex;
+  }
+
+  ul.posts p {
+    font-size: 90%;
+    line-height: 1.5em;
+    margin: 0 3ex 0.5ex 3ex;
+    padding-bottom: 0.5ex;
   }
 
 /*****************************************************************************/
