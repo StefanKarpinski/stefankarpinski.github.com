@@ -3,8 +3,15 @@ layout: default
 title: Stefan Karpinski
 ---
 <div id="home">
-  {% include about.html %}
+  <p>I'm a data scientist and applied mathematician. I've previously worked at <a href="http://www.akamai.com/" target="_blank">Akamai</a>, <a href="http://www.citrixonline.com/" target="_blank">Citrix Online</a>, and <a href="http://www.etsy.com/" target="_blank">Etsy</a>. Currently, I'm working on a next-generation programming language for numerical and scientific computing, called <a href="https://github.com/JuliaLang/julia#banner" target="_blank">Julia</a>. My résumé can be found <a href="/resume/">here</a>.
 
   <h1>Publications</h1>
-  {% include publications.html %}
+  <ul class="posts">
+    {% for post in site.categories.publications %}
+      <li>&raquo;
+        <a class="postlink" href="{{ post.url }}">{{ post.title }}</a>
+        <span class="timestamp">{{ post.date | date_to_string }}</span>
+      </li>
+    {% endfor %}
+  </ul>
 </div>
