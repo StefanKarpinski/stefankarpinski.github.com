@@ -1,0 +1,103 @@
+#!/usr/bin/perl
+#
+# Copyright 2008, Stefan Karpinski & Drew Youngren.
+#
+
+use strict;
+use warnings;
+
+use Getopt::Long;
+use Digest::SHA1 qw(sha1_base64);
+
+our $usage = <<USAGE;
+Usage: $0 [options]
+Options:
+  -lN --length=N     Set output password length.
+  -a  --alpha        Alphabetic output only.
+  -L  --lower        Lower case only.
+  -U  --upper        Upper case only.
+  -C  --no-copy      Don't copy password to clipboard.
+  -X  --no-clear     Don't clear clipboard on exit.
+  -K  --no-checksum  Don't print passphrase checksum.
+  -s  --show-pass    Show password in terminal.
+  -h  --help         Print this help message.
+USAGE
+
+our $length = 10;
+our $alpha;
+our $lower;
+our $upper;
+our $no_copy;
+our $no_clear;
+our $no_checksum;
+our $show_pass;
+
+Getopt::Long::Configure ("bundling");
+GetOptions
+  'length|l=i'    => \$length,
+  'alpha|a'       => \$alpha,
+  'lower|L'       => \$lower,
+  'upper|U'       => \$upper,
+  'no-copy|C'     => \$no_copy,
+  'no-clear|X'    => \$no_clear,
+  'no-checksum|K' => \$no_checksum,
+  'show-pass|s'   => \$show_pass,
+  'help|h'        => sub { print $usage; exit }
+or die $usage;
+
+$show_pass ||= $no_copy;
+$lower and $upper and
+  die "Cannot specify --lower and --upper together.\n$usage";
+$no_copy and $no_clear and
+  die "Cannot specify --no-copy and --no-clear together.\n$usage";
+
+our $copy;
+unless ($no_copy) {
+  $copy =
+    !system("type pbcopy 1>/dev/null 2>/dev/null") ? "pbcopy" :
+    !system("type xclip 1>/dev/null 2>/dev/null")  ? "xclip"  :
+      die "Cannot find pbcopy (OS X) or xclip (Linux).\n";
+}
+
+our $passphrase = "";
+print "Passphrase: ";
+system "stty -echo -icanon";
+while (sysread STDIN, my($c), 1) {
+  if (ord($c) < 32) { last; }
+  $passphrase .= $c;
+  syswrite STDOUT, "*", 1;
+}
+system "stty echo icanon";
+print "\n";
+unless ($no_checksum) {
+  our $checksum = sha1_base64("$passphrase/");
+  print "  Checksum: $checksum\n";
+}
+
+sub paste {
+  return unless $copy;
+  open CLIPBOARD, "| $copy" or warn "Clipboard error: $!";
+  print CLIPBOARD "@_";
+  close CLIPBOARD;
+}
+
+$SIG{INT} = sub {paste; exit} unless $no_clear;
+
+while (1) {
+  my ($keyword,$passwd);
+  print "   Keyword: ";
+  defined($keyword = <STDIN>) or last;
+  chomp($keyword);
+  $passwd = sha1_base64("$passphrase/$keyword");
+  $passwd =~ s{[+/]}{}g;
+  $passwd =~ s{[^a-z]}{}gi if $alpha;
+  $passwd = "\L$passwd" if $lower;
+  $passwd = "\U$passwd" if $upper;
+  $passwd = substr($passwd,0,$length);
+  print "  Password: $passwd\n" if $show_pass;
+  unless ($no_copy) {
+    paste $passwd;
+    print "Password copied to clipboard.\n";
+  }
+}
+paste unless $no_clear;

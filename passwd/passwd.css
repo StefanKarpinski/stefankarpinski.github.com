@@ -1,0 +1,30 @@
+body {
+	background: #FFFFFF;
+	font-family: Georgia;
+}
+
+table {
+	padding: 2px 8px 4px 8px;
+	border: 1pt dotted #333333;
+}
+
+h1 {
+	font: bold larger inherit inherit Verdana;
+}
+
+a {
+	color: gray;
+}
+
+a:hover {
+	color: black;
+}
+
+.copyright {
+	color: #b3b3b3;
+}
+
+.example {
+	color: #808080;
+	font-style: italic;
+}

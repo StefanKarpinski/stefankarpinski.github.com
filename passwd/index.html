@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>SHA1 Secure Password Generator</title>
+<link rel="stylesheet" type="text/css" href="passwd.css"/>
+<script type="text/javascript" src="sha1.js"></script>
+<script type="text/javascript">
+    function make_passwd(passphrase,keyword,length,no_nums,no_caps) {
+        hash = b64_sha1(
+            passphrase.replace(/\//g,"\\\/")
+            +"/"+
+            keyword.replace(/\//g,"\\\/")
+        ).replace(/[\+\/]/g,"");
+        if (no_nums) hash = hash.replace(/\d/g,"");
+        if (no_caps) hash = hash.toLowerCase();;
+        return hash.substring(0,length);
+    }
+    function update_passwd() {
+        document.form.password.value = make_passwd(
+            document.form.passphrase.value,
+            document.form.keyword.value,
+            document.form.length.value,
+            document.form.no_nums.checked,
+            document.form.no_caps.checked
+        );
+    }
+</script>
+</head>
+<body>
+<center>
+<form name="form" action="javascript:">
+<h1>SHA1 Secure Password Generator</h1>
+<table cellpadding="4">
+<tr>
+<td align="right">passphrase</td>
+<td><input type="password" name="passphrase" size="40" onkeyup="update_passwd()" onchange="update_passwd()"></td>
+<td colspan="3"><font class="example">e.g. "My dog has fleas."</font></td>
+</tr>
+<tr>
+<td align="right">keyword</td>
+<td><input type="text" name="keyword" size="40" onkeyup="update_passwd()" onchange="update_passwd()"></td>
+<td colspan="3"><font class="example">e.g. "root@laptop", "mybank.com"</font></td>
+</tr>
+<tr>
+<td align="right">password</td>
+<td><input type="text" name="password" size="40" readonly="true"></td>
+<td>length <input type="text" name="length" size="03" value="10" onkeyup="update_passwd()" onchange="update_passwd()"></td>
+<td><input type="checkbox" name="no_nums" onchange="update_passwd()"> no #s</td>
+<td><input type="checkbox" name="no_caps" onchange="update_passwd()"> no CAPs</td>
+</tr>
+<!-- <tr>
+<td align="right">debug</td>
+<td><input type="text" name="debug" size="40" readonly="true"></td>
+</tr> -->
+</table>
+</form>
+<p><a href="passwd-gen">command line version</a></p>
+<p class="copyright">&#169; Stefan Karpinski | 2005-2008</p>
+</center>
+</body>
+</html>
