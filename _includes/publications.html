@@ -1,0 +1,9 @@
+<h1>Publications</h1>
+<ul class="posts">
+  {% for post in site.categories.publications %}
+    <li>&raquo;
+      <a class="postlink" href="{{ post.url }}">{{ post.title }}</a>
+      <span class="timestamp">{{ post.date | date_to_string }}</span>
+    </li>
+  {% endfor %}
+</ul>
