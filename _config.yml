@@ -1,4 +1,8 @@
-markdown: rdiscount
+permalink: /:categories/:year/:title
+
 pygments: true
 
-permalink: /:categories/:year/:title
+markdown: rdiscount
+rdiscount:
+  extensions:
+    - smart
