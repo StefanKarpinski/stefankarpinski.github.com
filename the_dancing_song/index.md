@@ -20,11 +20,11 @@ Thus she laughed, the incredible one; but I never blieve her and her laughter wh
 
 And when I talked in confidence with my wild wisdom she said to me in anger, "You will, you want, you love–this is the only reason why you *praise* life." Then I almost answered wickedly and told the angry woman the truth; and there is no more wicked answer than telling one's wisdom the truth.
 
-For thus matter stand among the three of us: Deeply I love only life–and verily, most of all when I hate life. But I am well disposed toward wisdom, and often too well, that is because she reminds me so much of life. She has her eyes, her laugh, and even her little golden fishing rod: is it my fault that the two look so similar?
+For thus matters stand among the three of us: Deeply I love only life–and verily, most of all when I hate life. But I am well disposed toward wisdom, and often too well, that is because she reminds me so much of life. She has her eyes, her laugh, and even her little golden fishing rod: is it my fault that the two look so similar?
 
-And when life once asked me, "Who is this wisdom?" I answered fervently, "Oh yes, wisdom! One thirsts after her and is never satisfied; one looks through veils, one grabs through nets. Is she beautiful? How should I know? But even the oldest carps are baited with her. She is changeable and stubborn; often I have seen her bit her lib and comb her hair against the grain. Perhaps she is evil and false and female in every way; but just when she speaks ill of herself she is most seductive."
+And when life once asked me, "Who is this wisdom?" I answered fervently, "Oh yes, wisdom! One thirsts after her and is never satisfied; one looks through veils, one grabs through nets. Is she beautiful? How should I know? But even the oldest carps are baited with her. She is changeable and stubborn; often I have seen her bite her lip and comb her hair against the grain. Perhaps she is evil and false and female in every way; but just when she speaks ill of herself she is most seductive."
 
-When I said this to life she laughed sarcastically and closed her eyes. "Of whom are you speaking?" she asked; "no doubt, of me. And even if you are right–should *that* be said to my face? But now speak of our wisdom too."
+When I said this to life she laughed sarcastically and closed her eyes. "Of whom are you speaking?" she asked; "no doubt, of me. And even if you are right–should *that* be said to my face? But now speak of your wisdom too."
 
 Ah, and then you opened your eyes again, O beloved life. And again I seemed to myself to be sinking into the unfathomable.
 
