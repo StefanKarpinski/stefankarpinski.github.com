@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/stefankarpinski
+------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://karpinski.org
+  * I am stefankarpinski (https://keybase.io/stefankarpinski) on keybase.
+  * I have a public key with fingerprint 4C10 BA15 852B 3B75 CECA  D1CC 369C FB85 AAE3 CB1B
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101de54806cb5b756c76d6210a84ecb20238669d96ce7391abf21d923856d026eec0a",
+            "fingerprint": "4c10ba15852b3b75cecad1cc369cfb85aae3cb1b",
+            "host": "keybase.io",
+            "key_id": "369cfb85aae3cb1b",
+            "kid": "0101de54806cb5b756c76d6210a84ecb20238669d96ce7391abf21d923856d026eec0a",
+            "uid": "1941ec830c89e67ad9a23c3d5e280d19",
+            "username": "stefankarpinski"
+        },
+        "service": {
+            "hostname": "karpinski.org",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1454622157,
+    "expire_in": 157680000,
+    "prev": "1b9b0af62d44f5e4e3fca102caadad1ee44b20c30d95496bf307bee6a0059b3e",
+    "seqno": 4,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.49
+Comment: https://keybase.io/crypto
+
+yMImAnicrVJbSBVBGD5mVytQCqLSpKVQQm1mL3N2D92oqMAuL1YY1TKX/+hm7Z52
+Vy0yoofoIbqTRHZSeqiXrhoFZVmZSokU3eihuwd76ALRiwRFs1I99di8DPP/3/fN
+9/0z98Znx3KyWgrs0/0bq99k9d45VRtb09bVt0NhntiuJHYoNTC0wWYBQWjXOEJJ
+KAgjLMDQTUQ4M1jcIDxOBFExoqYOnKlI1UxCLGERDnHNwpQlVSwsWTWIQCoB4Igq
+JUrScavAT/mOG0pZnWPEKDZMQ2WaVOXAqcCca8TiSWYalILGGWaSWO0FEUOaYzSA
+MseTNXmwh+z9A/+ffdcOyWFLx8BNDXHTAhKnwqKqxjVhgGoiga0IGIDv0i0g0UEI
+SerWUD/luEGNo+wsUWSzzuEQzTcK9Bv4F1Lm+VVSI+V7oce9zbJVHYapRMQMt6ci
+aD0w+7eIzRxXyHFKQh34geO5SgJLJA+dSBXrhk5UFRvxEgW2pRwfbCdCGHFiIrmi
+a6AuCsUshmiSqELXkwbooCU5xUjllAr5GgC6LufENSQsQ7cIS2oozgAIRciwmAZK
+FGur6ykJXdqkVVFyp8qlYa0Pys67t9cPj2XlxEaOGBZ9s1jOmNw/n28tG/U9Oz3z
+cvtKmLy6Valo+rjsZXZeJj+99uSRn7inoXLBrvLndsGhytIH9QdXDK472PA2LB0+
+dV549emMe58XftrDrz36cmwCKe6d7uV96Bxsf50xXzXWdyw+scF/8aS/7dutWrON
+DORlEk2NGy72N6Tfdw28cvZ0TA9blz4+c3zOtSM9l5aee5fJlB+dV/ihvdjOaZ0j
+zu7/UfTgYU9lXee0feODion56fMHBkY3J5rz5367PmnVy+Xu7OX3MyfTx56OnXJ4
+VuH73NKC0u8/utvmLzEXNRtTLxd+3VrWEuzNu9DYuDvVcaOpfHb3zX3DDgwql4yG
+TZ2fxhU13SrWsq63POtL2V+ujP0Fi/5KuA==
+=O+ds
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/stefankarpinski
+
+==================================================================
