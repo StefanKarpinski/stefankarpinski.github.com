@@ -5,5 +5,5 @@ where: New York, NY
 link:  http://juliacomputing.com/
 ---
 
-*Chief Technology Officer (Finance).*
+*Chief Open Source Officer.*
 Julia Computing develops products to support the commercial use of Julia in finance, aerospace, insurance, and other domains.
