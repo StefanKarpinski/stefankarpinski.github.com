@@ -1,6 +1,6 @@
 ---
 title: Budapest Semesters in Mathematics
-dates: Spring 1999
+dates: spring 1999
 where: Budapest, Hungary
 link:  http://www.stolaf.edu/depts/math/budapest
 ---

@@ -1,6 +1,6 @@
 ---
 title: Medical Liability Mutual Insurance Company
-dates: Summers 1996-1997
+dates: summers 1996-1997
 where: New York, NY
 link:  http://www.mlmic.com/
 ---
