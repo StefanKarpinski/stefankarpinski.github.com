@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>Secret Santa Decoder</title>
+<script type="text/javascript">
+    function mod(i, m) {
+        return i < 0 ? m - (-i % m) : i % m
+    }
+
+    function c2i(c) {
+        let a = 'A'.codePointAt(0)
+        let i = c.toUpperCase().codePointAt(0) - a + 1
+        return 1 <= i && i <= 26 ? i : 0
+    }
+
+    function i2c(i) {
+        i = mod(i, 27)
+        let a = 'A'.codePointAt(0)
+        return i == 0 ? '_' : String.fromCodePoint(a + i - 1)
+    }
+
+    function decode(key, text) {
+        words = []
+        codes = text.trim().split(/\s+/)
+        letters = "_ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        for (code of codes) {
+            word = ""
+            for (i = 0; i < code.length; i++) {
+                c = code[i]
+                k = key[i % key.length]
+                d = i2c(c2i(c) + c2i(k) + i + 1)
+                if (d != '_') {
+                    word += d
+                }
+            }
+            words.push(word)
+        }
+        return words.join(' ')
+    }
+
+    function do_decode() {
+        document.form.decoded.value = decode(
+            document.form.key.value,
+            document.form.encoded.value,
+        )
+    }
+</script>
+</head>
+<body>
+<center>
+<h1>&#127877; Secret Santa Decoder! &#127877;</h1>
+
+<div style="width: 300px; text-align: left">
+Instructions:
+<ol>
+    <li>Select your name from the drop-down</li>
+    <li>Copy and paste the encoded names that you got in your email</li>
+    <li>Click the "Decode!" button</li>
+</ol>
+You can paste one name at a time or both together but you need to make sure the space between the two coded names or the second name will be gibberish.
+</div>
+<br/>
+
+<form name="form" action="javascript:">
+    <label for="key">Your name:</label>
+    <select name="key" id="key">
+        <option value="Andrew">Andrew</option>
+        <option value="Dermot">Dermot</option>
+        <option value="Kat">Kat</option>
+        <option value="Kristina">Kristina</option>
+        <option value="Maria">Maria</option>
+        <option value="Marion">Marion</option>
+        <option value="Rick">Rick</option>
+        <option value="Stefan">Stefan</option>
+        <option value="Tricia">Tricia</option>
+    </select>
+    <br/>
+    <br/>
+    <label for="encoded">Encoded secret:</label>
+    <input type="encoded" id="encoded" name="encoded" size="30"><br>
+    <label for="decoded">Decoded secret:</label>
+    <input type="decoded" id="decoded" name="decoded" size="30" disabled><br>
+    <br/>
+    <input type="submit" value="Decode!" onclick="do_decode()">
+</form>
+</center>
+</body>
+</html>
