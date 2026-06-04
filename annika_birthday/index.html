@@ -26,12 +26,14 @@
     --lime:   #dbff21;
     --ink:    #000;
     --strobe: 2s;           /* full blink cycle = 0.5 Hz */
-    /* white outline for black text over the flower background */
+    /* white outline for black text over the flower background.
+       offsets are in cqw so they scale with the poster width
+       (reference poster = 640px, so 1.4px ≈ 0.22cqw, 1.6px ≈ 0.25cqw) */
     --outline:
-      -1.4px -1.4px 0 #fff,  1.4px -1.4px 0 #fff,
-      -1.4px  1.4px 0 #fff,  1.4px  1.4px 0 #fff,
-       0    -1.6px 0 #fff,   0     1.6px 0 #fff,
-      -1.6px  0    0 #fff,   1.6px  0    0 #fff;
+      -0.22cqw -0.22cqw 0 #fff,  0.22cqw -0.22cqw 0 #fff,
+      -0.22cqw  0.22cqw 0 #fff,  0.22cqw  0.22cqw 0 #fff,
+       0       -0.25cqw 0 #fff,  0        0.25cqw 0 #fff,
+      -0.25cqw  0       0 #fff,  0.25cqw  0       0 #fff;
   }
 
   *{ box-sizing:border-box; margin:0; padding:0; }
@@ -50,6 +52,9 @@
   .poster{
     width: min(640px, 94vw);
     aspect-ratio: 2728 / 5120;   /* native 2:3, stretched 25% taller */
+    /* become a query container so the card + type scale with the poster,
+       keeping the same framing on phone as on desktop */
+    container-type: inline-size;
     background: #fb3c90 url("pexels_orig.jpg") center / 100% 100% no-repeat;
     display:flex;
     flex-direction:column;
@@ -67,7 +72,7 @@
 
   /* ---- the flyer card ---- */
   .card{
-    --w: 360px;
+    --w: 56.25cqw;   /* 360px at the 640px reference poster width */
     width:var(--w);
     background:transparent;
     padding: 0;
@@ -99,16 +104,16 @@
   .word{
     position:relative;
     z-index:1;
-    font-size: 5.3rem;
+    font-size: 13.25cqw;            /* 5.3rem at 640px reference */
     line-height:.82;
     letter-spacing:.06em;
     color:var(--ink);
-    -webkit-text-stroke: 3px var(--ink);   /* outline always present */
+    -webkit-text-stroke: 0.47cqw var(--ink);   /* outline always present (~3px) */
     -webkit-text-fill-color: var(--ink);   /* solid by default; animated below */
     transform:scaleY(1.18);          /* Anton is tall; squeeze toward the heavy condensed look */
     animation: strobe var(--strobe) steps(1) infinite;
   }
-  .word.bday{ font-size:4.7rem; }
+  .word.bday{ font-size:11.75cqw; }   /* 4.7rem at 640px reference */
 
   /* fill (solid black) <-> outline (hollow) */
   @keyframes strobe{
@@ -128,7 +133,7 @@
   .subtitle{
     text-align:center;
     color:var(--ink);
-    font-size:2.4rem;
+    font-size:6cqw;        /* 2.4rem at 640px reference */
     margin-top:.55em;
     transform:scaleY(1.1);
     letter-spacing:.01em;
@@ -141,26 +146,26 @@
     text-align:center;
     color:var(--ink);
     font-family: 'Special Elite', 'Courier New', monospace;
-    margin-top:.9rem;
+    margin-top:2.25cqw;        /* .9rem at 640px reference */
     text-shadow: var(--outline);
   }
   .details hr{
     border:0;
-    border-top:1.5px solid var(--ink);
+    border-top:0.23cqw solid var(--ink);
     width:60%;
-    margin:0 auto 1.9rem;
+    margin:0 auto 4.75cqw;     /* 1.9rem at 640px reference */
     opacity:.85;
   }
-  .details p{ margin:0 0 .85rem; line-height:1.35; }
+  .details p{ margin:0 0 2.13cqw; line-height:1.35; }   /* .85rem */
   .details .when{
-    font-size:1.18rem;
+    font-size:2.95cqw;         /* 1.18rem at 640px reference */
     font-weight:bold;
     letter-spacing:.01em;
   }
   .details .when sup{ font-size:.62em; }
-  .details .where{ font-size:1.02rem; }
+  .details .where{ font-size:2.55cqw; }    /* 1.02rem */
   .details .note{
-    font-size:.98rem;
+    font-size:2.45cqw;                      /* .98rem */
     font-style:italic;
     margin-bottom:0;
   }
