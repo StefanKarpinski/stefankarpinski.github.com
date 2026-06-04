@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Annika is 2!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --mint:   #d3ffde;
+    --orange: #ff7739;
+    --magenta:#f78cfe;
+    --lime:   #dbff21;
+    --ink:    #000;
+    --strobe: 2s;           /* full blink cycle = 0.5 Hz */
+    /* white outline for black text over the flower background */
+    --outline:
+      -1.4px -1.4px 0 #fff,  1.4px -1.4px 0 #fff,
+      -1.4px  1.4px 0 #fff,  1.4px  1.4px 0 #fff,
+       0    -1.6px 0 #fff,   0     1.6px 0 #fff,
+      -1.6px  0    0 #fff,   1.6px  0    0 #fff;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  body{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding: 2vh;
+    background:#222;
+    font-family:'Anton', system-ui, sans-serif;
+  }
+
+  /* poster: matches the background image's native 2728:4096 (2:3) ratio */
+  .poster{
+    width: min(640px, 94vw);
+    aspect-ratio: 2728 / 5120;   /* native 2:3, stretched 25% taller */
+    background: #fb3c90 url("pexels_orig.jpg") center / 100% 100% no-repeat;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+  }
+
+  /* ---- stack: card + subtitle over the background ---- */
+  .stage{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  /* ---- the flyer card ---- */
+  .card{
+    --w: 360px;
+    width:var(--w);
+    background:transparent;
+    padding: 0;
+    display:flex;
+    flex-direction:column;
+    gap:0;
+  }
+
+  /* ---- color-block grid behind each title ---- */
+  .band{
+    position:relative;
+    display:grid;
+    place-items:center;
+    overflow:hidden;
+    height: calc(var(--w) / 3);   /* 2 rows of square tiles (w/6 each) */
+  }
+
+  .blocks{
+    position:absolute;
+    inset:0;
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    grid-auto-rows: calc(var(--w) / 6);   /* square cells */
+    z-index:0;
+  }
+  .blocks span{ display:block; }
+
+  /* ---- the strobing title text ---- */
+  .word{
+    position:relative;
+    z-index:1;
+    font-size: 5.3rem;
+    line-height:.82;
+    letter-spacing:.06em;
+    color:var(--ink);
+    -webkit-text-stroke: 3px var(--ink);   /* outline always present */
+    -webkit-text-fill-color: var(--ink);   /* solid by default; animated below */
+    transform:scaleY(1.18);          /* Anton is tall; squeeze toward the heavy condensed look */
+    animation: strobe var(--strobe) steps(1) infinite;
+  }
+  .word.bday{ font-size:4.7rem; }
+
+  /* fill (solid black) <-> outline (hollow) */
+  @keyframes strobe{
+    0%,49%   { -webkit-text-fill-color: var(--ink);   }  /* solid */
+    50%,100% { -webkit-text-fill-color: transparent;  }  /* hollow outline */
+  }
+
+  /* ---- center photo (matches the source 3:4 ratio, no border) ---- */
+  .photo{
+    width:100%;
+    aspect-ratio: 768 / 1024;
+    margin: 0;
+    background:#e9e3d6 url("annika.jpg") center/cover no-repeat;
+  }
+
+  /* ---- subtitle: over the background, below the card ---- */
+  .subtitle{
+    text-align:center;
+    color:var(--ink);
+    font-size:2.4rem;
+    margin-top:.55em;
+    transform:scaleY(1.1);
+    letter-spacing:.01em;
+    text-shadow: var(--outline);
+  }
+
+  /* ---- event details: over the background ---- */
+  .details{
+    width:var(--w, 360px);
+    text-align:center;
+    color:var(--ink);
+    font-family: 'Special Elite', 'Courier New', monospace;
+    margin-top:.9rem;
+    text-shadow: var(--outline);
+  }
+  .details hr{
+    border:0;
+    border-top:1.5px solid var(--ink);
+    width:60%;
+    margin:0 auto 1.9rem;
+    opacity:.85;
+  }
+  .details p{ margin:0 0 .85rem; line-height:1.35; }
+  .details .when{
+    font-size:1.18rem;
+    font-weight:bold;
+    letter-spacing:.01em;
+  }
+  .details .when sup{ font-size:.62em; }
+  .details .where{ font-size:1.02rem; }
+  .details .note{
+    font-size:.98rem;
+    font-style:italic;
+    margin-bottom:0;
+  }
+  .details .swim{
+    display:inline-block;
+    margin-top:.7em;
+  }
+</style>
+</head>
+<body>
+  <div class="poster">
+  <div class="stage">
+  <div class="card">
+
+    <div class="band title">
+      <div class="blocks">
+        <!-- row 1 -->
+        <span style="background:var(--orange)"></span>
+        <span style="background:var(--mint)"></span>
+        <span style="background:var(--lime)"></span>
+        <span style="background:var(--orange)"></span>
+        <span style="background:var(--mint)"></span>
+        <span style="background:var(--magenta)"></span>
+        <!-- row 2 -->
+        <span style="background:var(--magenta)"></span>
+        <span style="background:var(--lime)"></span>
+        <span style="background:var(--orange)"></span>
+        <span style="background:var(--mint)"></span>
+        <span style="background:var(--lime)"></span>
+        <span style="background:var(--orange)"></span>
+      </div>
+      <div class="word">ANNIKA'S</div>
+    </div>
+
+    <div class="photo"></div>
+
+    <div class="band bday">
+      <div class="blocks">
+        <!-- row 1 -->
+        <span style="background:var(--lime)"></span>
+        <span style="background:var(--orange)"></span>
+        <span style="background:var(--magenta)"></span>
+        <span style="background:var(--lime)"></span>
+        <span style="background:var(--mint)"></span>
+        <span style="background:var(--orange)"></span>
+        <!-- row 2 -->
+        <span style="background:var(--mint)"></span>
+        <span style="background:var(--magenta)"></span>
+        <span style="background:var(--lime)"></span>
+        <span style="background:var(--orange)"></span>
+        <span style="background:var(--magenta)"></span>
+        <span style="background:var(--mint)"></span>
+      </div>
+      <div class="word bday">BIRTHDAY</div>
+    </div>
+
+  </div>
+
+  <div class="subtitle">ANNIKA IS 2!</div>
+  </div>
+
+  <div class="details">
+    <hr>
+    <p class="when">Thursday, June 11<sup>th</sup> at 3&ndash;5&nbsp;pm</p>
+    <p class="where">
+      &ldquo;The Harbor Park&rdquo;<br>
+      StuyTown Playground 4<br>
+      (in the Ave C loop)
+    </p>
+    <p class="note">
+      There will be pizza, cake<br>
+      and other refreshments<br>
+      <span class="swim">Bring your bathing suits!</span>
+    </p>
+  </div>
+  </div>
+</body>
+</html>
